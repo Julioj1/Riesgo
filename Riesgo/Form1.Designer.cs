@@ -46,6 +46,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvRiesgo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -207,11 +209,35 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.AccessibleDescription = "";
+            this.btnBuscar.Location = new System.Drawing.Point(248, 244);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(97, 38);
+            this.btnBuscar.TabIndex = 17;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.AccessibleDescription = "";
+            this.btnModificar.Location = new System.Drawing.Point(364, 244);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(97, 38);
+            this.btnModificar.TabIndex = 18;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1090, 596);
+            this.Controls.Add(this.btnModificar);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblInformation);
@@ -257,6 +283,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Button btnModificar;
     }
 }
 

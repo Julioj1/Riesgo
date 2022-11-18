@@ -13,7 +13,7 @@ namespace Riesgo
 {
     public partial class Form1 : Form
     {
-        ArrayList Riesgos = new ArrayList();
+        List <Riesgo> Riesgos = new List<Riesgo>();
         private int n = 0;
 
         public Form1()
@@ -42,13 +42,7 @@ namespace Riesgo
 
         private void btnagregar_Click(object sender, EventArgs e)
         {
-            if (txtId.Text == "")
-            {
-                errorProvider1.SetError(txtId, "Debe ingresar el ID del riesgo");
-                txtId.Focus();
-                return;
-            }
-            errorProvider1.SetError(txtId, "");
+            if (!ValidarID()) return;
 
             if (Existe(txtId.Text))
             {
@@ -57,29 +51,7 @@ namespace Riesgo
                 return;
             }
 
-            if (txtnombre.Text == "")
-            {
-                errorProvider1.SetError(txtnombre, "Debe ingresar el nombre del riesgo");
-                txtnombre.Focus();
-                return;
-            }
-            errorProvider1.SetError(txtnombre, "");
-
-            if (txtdescripción.Text == "")
-            {
-                errorProvider1.SetError(txtdescripción, "Debe ingresar la descripción del problema");
-                txtdescripción.Focus();
-                return;
-            }
-            errorProvider1.SetError(txtdescripción, "");
-
-            if (rtbmitigación.Text == "")
-            {
-                errorProvider1.SetError(rtbmitigación, "Debe ingresar la descripción del problema");
-                rtbmitigación.Focus();
-                return;
-            }
-            errorProvider1.SetError(rtbmitigación, "");
+            
 
             Riesgo miriesgo= new Riesgo();
             miriesgo.ID = txtId.Text;
@@ -123,5 +95,103 @@ namespace Riesgo
                 lblInformation.Text = (string)dtgvRiesgo.Rows[n].Cells[0].Value;
             }
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (!ValidarID()) return;
+
+            Riesgo miRiesgo = GetRiesgo(txtId.Text);
+            if (miRiesgo == null)
+            {
+                errorProvider1.SetError(txtId, "Riesgo no existe");
+                txtId.Focus();
+                return;
+            }
+            errorProvider1.SetError(txtId, "");
+
+            txtId.Text = miRiesgo.ID;
+            txtnombre.Text = miRiesgo.Name;
+            txtdescripción.Text = miRiesgo.Description;
+            rtbmitigación.Text = miRiesgo.Mitigation;
+        }
+
+        private bool ValidarID()
+        {
+            if (txtId.Text == "")
+            {
+                errorProvider1.SetError(txtId, "Debe ingresar el ID del riesgo");
+                txtId.Focus();
+                return false;
+            }
+            errorProvider1.SetError(txtId, "");
+            return true;
+        }
+        private Riesgo GetRiesgo(string ID)
+        {
+            foreach (Riesgo miRiesgo in Riesgos)
+            {
+                if (miRiesgo.ID == ID) return miRiesgo;
+            }
+            return null;
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if (!ValidarID()) return;
+
+            if (GetRiesgo(txtId.Text) == null)
+            {
+                errorProvider1.SetError(txtId, "Riesgo no existe");
+                txtId.Focus();
+                return;
+            }
+            errorProvider1.SetError(txtId, "");
+
+            if (!ValidarOtrosCampos()) return;
+
+            foreach (Riesgo miRiesgo in Riesgos)
+            {
+                if (miRiesgo.ID == txtId.Text)
+                {
+                    miRiesgo.Name = txtnombre.Text;
+                    miRiesgo.Description = txtdescripción.Text;
+                    miRiesgo.Mitigation = rtbmitigación.Text;
+                    break;
+                }
+            }
+            dtgvRiesgo.DataSource = null;
+            dtgvRiesgo.DataSource = Riesgos;
+
+        }
+
+        private bool ValidarOtrosCampos()
+        {
+            if (txtnombre.Text == "")
+            {
+                errorProvider1.SetError(txtnombre, "Debe ingresar el nombre del riesgo");
+                txtnombre.Focus();
+                return false;
+            }
+            errorProvider1.SetError(txtnombre, "");
+
+            if (txtdescripción.Text == "")
+            {
+                errorProvider1.SetError(txtdescripción, "Debe ingresar la descripción del problema");
+                txtdescripción.Focus();
+                return false;
+            }
+            errorProvider1.SetError(txtdescripción, "");
+
+            if (rtbmitigación.Text == "")
+            {
+                errorProvider1.SetError(rtbmitigación, "Debe ingresar la descripción del problema");
+                rtbmitigación.Focus();
+                return false;
+            }
+            errorProvider1.SetError(rtbmitigación, "");
+
+            return true;
+        }
+        
     }
 }
