@@ -1,0 +1,14 @@
+C:\Users\delac\Documents\Jcrack\ITLA\Fundamento programación\Riesgo\Riesgo\bin\Debug\Riesgo.exe.config
+C:\Users\delac\Documents\Jcrack\ITLA\Fundamento programación\Riesgo\Riesgo\bin\Debug\Riesgo.exe
+C:\Users\delac\Documents\Jcrack\ITLA\Fundamento programación\Riesgo\Riesgo\bin\Debug\Riesgo.pdb
+C:\Users\delac\Documents\Jcrack\ITLA\Fundamento programación\Riesgo\Riesgo\bin\Debug\LiteDB.dll
+C:\Users\delac\Documents\Jcrack\ITLA\Fundamento programación\Riesgo\Riesgo\bin\Debug\LiteDB.xml
+C:\Users\delac\Documents\Jcrack\ITLA\Fundamento programación\Riesgo\Riesgo\obj\Debug\Riesgo.csproj.AssemblyReference.cache
+C:\Users\delac\Documents\Jcrack\ITLA\Fundamento programación\Riesgo\Riesgo\obj\Debug\Riesgo.csproj.SuggestedBindingRedirects.cache
+C:\Users\delac\Documents\Jcrack\ITLA\Fundamento programación\Riesgo\Riesgo\obj\Debug\Riesgo.Form1.resources
+C:\Users\delac\Documents\Jcrack\ITLA\Fundamento programación\Riesgo\Riesgo\obj\Debug\Riesgo.Properties.Resources.resources
+C:\Users\delac\Documents\Jcrack\ITLA\Fundamento programación\Riesgo\Riesgo\obj\Debug\Riesgo.csproj.GenerateResource.cache
+C:\Users\delac\Documents\Jcrack\ITLA\Fundamento programación\Riesgo\Riesgo\obj\Debug\Riesgo.csproj.CoreCompileInputs.cache
+C:\Users\delac\Documents\Jcrack\ITLA\Fundamento programación\Riesgo\Riesgo\obj\Debug\Riesgo.csproj.CopyComplete
+C:\Users\delac\Documents\Jcrack\ITLA\Fundamento programación\Riesgo\Riesgo\obj\Debug\Riesgo.exe
+C:\Users\delac\Documents\Jcrack\ITLA\Fundamento programación\Riesgo\Riesgo\obj\Debug\Riesgo.pdb
