@@ -48,6 +48,7 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
+            this.btnlimpiar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvRiesgo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -59,7 +60,7 @@
             this.dtgvRiesgo.Name = "dtgvRiesgo";
             this.dtgvRiesgo.RowHeadersWidth = 51;
             this.dtgvRiesgo.RowTemplate.Height = 24;
-            this.dtgvRiesgo.Size = new System.Drawing.Size(929, 309);
+            this.dtgvRiesgo.Size = new System.Drawing.Size(895, 309);
             this.dtgvRiesgo.TabIndex = 0;
             this.dtgvRiesgo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvRiesgo_CellClick);
             // 
@@ -103,7 +104,7 @@
             // 
             this.txtdescripción.Location = new System.Drawing.Point(437, 69);
             this.txtdescripción.Name = "txtdescripción";
-            this.txtdescripción.Size = new System.Drawing.Size(504, 22);
+            this.txtdescripción.Size = new System.Drawing.Size(470, 22);
             this.txtdescripción.TabIndex = 6;
             // 
             // label1
@@ -136,7 +137,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(658, 133);
+            this.label2.Location = new System.Drawing.Point(613, 133);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 16);
             this.label2.TabIndex = 10;
@@ -144,7 +145,7 @@
             // 
             // rtbmitigación
             // 
-            this.rtbmitigación.Location = new System.Drawing.Point(650, 152);
+            this.rtbmitigación.Location = new System.Drawing.Point(616, 152);
             this.rtbmitigación.Name = "rtbmitigación";
             this.rtbmitigación.Size = new System.Drawing.Size(291, 130);
             this.rtbmitigación.TabIndex = 11;
@@ -231,11 +232,23 @@
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
+            // btnlimpiar
+            // 
+            this.btnlimpiar.AccessibleDescription = "";
+            this.btnlimpiar.Location = new System.Drawing.Point(479, 244);
+            this.btnlimpiar.Name = "btnlimpiar";
+            this.btnlimpiar.Size = new System.Drawing.Size(97, 38);
+            this.btnlimpiar.TabIndex = 19;
+            this.btnlimpiar.Text = "Limpiar";
+            this.btnlimpiar.UseVisualStyleBackColor = true;
+            this.btnlimpiar.Click += new System.EventHandler(this.btnlimpiar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1090, 596);
+            this.Controls.Add(this.btnlimpiar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtId);
@@ -285,6 +298,7 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnlimpiar;
     }
 }
 

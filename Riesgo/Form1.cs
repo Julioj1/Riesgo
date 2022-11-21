@@ -80,10 +80,31 @@ namespace Riesgo
 
         private void btnnuevo_Click(object sender, EventArgs e)
         {
-            if(n != -1)
+            DialogResult rta = MessageBox.Show(this, "Esta seguro de borrar el riesgo?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            if (rta == DialogResult.No) return;
+
+            if (!ValidarID()) return;
+            
+            if (GetRiesgo(txtId.Text) == null)
             {
-                dtgvRiesgo.Rows.RemoveAt(n);
+                errorProvider1.SetError(txtId, "Persona no existe");
+                txtId.Focus();
+                return;
             }
+            errorProvider1.SetError(txtId, "");
+
+            foreach ( Riesgo miRiesgo in Riesgos)
+            {
+                if (miRiesgo.ID == txtId.Text)
+                {
+                    Riesgos.Remove(miRiesgo);
+                    break;
+                }
+            }
+            btnlimpiar_Click(sender, e);
+            dtgvRiesgo.DataSource = null;
+            dtgvRiesgo.DataSource = Riesgos;
+
         }
 
         private void dtgvRiesgo_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -192,6 +213,13 @@ namespace Riesgo
 
             return true;
         }
-        
+
+        private void btnlimpiar_Click(object sender, EventArgs e)
+        {
+            txtId.Clear();
+            txtnombre.Clear();
+            txtdescripción.Clear();
+            rtbmitigación.Clear();
+        }
     }
 }
