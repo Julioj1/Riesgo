@@ -4,10 +4,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 
 namespace Riesgo
 {
@@ -23,19 +25,29 @@ namespace Riesgo
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Riesgo riesgo1 = new Riesgo();
-            riesgo1.ID = "20220625";
-            riesgo1.Name = "Julio De la Cruz";
-            riesgo1.Mitigation = "Buscar un plomero que arregle el problema";
-            riesgo1.Description = "Se esta filtrando el agua de el techo";
-            Riesgos.Add(riesgo1);
+            //Riesgo riesgo1 = new Riesgo();
+            //riesgo1.ID = "20220625";
+            //riesgo1.Name = "Julio De la Cruz";
+            //riesgo1.Mitigation = "Buscar un plomero que arregle el problema";
+            //riesgo1.Description = "Se esta filtrando el agua de el techo";
+            //Riesgos.Add(riesgo1);
 
-            Riesgo riesgo2 = new Riesgo();
-            riesgo2.ID = "20220781";
-            riesgo2.Name = "Jose Tomas";
-            riesgo2.Mitigation = "Buscar a alguien que arregle el techo";
-            riesgo2.Description = "Se esta cayendo el techo";
-            Riesgos.Add(riesgo2);
+            //Riesgo riesgo2 = new Riesgo();
+            //riesgo2.ID = "20220781";
+            //riesgo2.Name = "Jose Tomas";
+            //riesgo2.Mitigation = "Buscar a alguien que arregle el techo";
+            //riesgo2.Description = "Se esta cayendo el techo";
+            //Riesgos.Add(riesgo2);
+
+            if (File.Exists("Riesgos.xml"))
+            {
+                XmlSerializer Serializador = new XmlSerializer(typeof(List<Riesgo>));
+                FileStream Lector = File.OpenRead("Riesgos.xml");
+                Riesgos = (List<Riesgo>)Serializador.Deserialize(Lector);
+                Lector.Close();
+            }
+           
+
 
             dtgvRiesgo.DataSource = Riesgos;
         }
@@ -220,6 +232,13 @@ namespace Riesgo
             txtnombre.Clear();
             txtdescripción.Clear();
             rtbmitigación.Clear();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            XmlSerializer Serializador = new XmlSerializer(typeof(List<Riesgo>));
+            TextWriter escritor = new StreamWriter ("Riesgos.xml");
+            Serializador.Serialize(escritor, Riesgos);
         }
     }
 }

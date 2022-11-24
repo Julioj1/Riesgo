@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Riesgo
 {
-    internal class Riesgo
+    public class Riesgo
     {
         public string ID { get; set; }
         public string Name { get; set; }

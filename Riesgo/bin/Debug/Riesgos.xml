@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfRiesgo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Riesgo>
+    <ID>20220625</ID>
+    <Name>Julio De la Cruz</Name>
+    <Description>Se esta filtrando el agua de el techo</Description>
+    <Mitigation>Buscar un plomero que arregle el problema</Mitigation>
+  </Riesgo>
+  <Riesgo>
+    <ID>20220781</ID>
+    <Name>Jose Tomas</Name>
+    <Description>Se esta cayendo el techo</Description>
+    <Mitigation>Buscar a alguien que arregle el techo</Mitigation>
+  </Riesgo>
+  <Riesgo>
+    <ID>20221458</ID>
+    <Name>Se podria caer el techo</Name>
+    <Description>El techo se esta cayendo</Description>
+    <Mitigation>pegar el techo</Mitigation>
+  </Riesgo>
+  <Riesgo>
+    <ID>20214569</ID>
+    <Name>a</Name>
+    <Description>Puede venir un tornado y arrasar con todo</Description>
+    <Mitigation>hacer un bunker</Mitigation>
+  </Riesgo>
+  <Riesgo>
+    <ID>20151541</ID>
+    <Name>Guerra</Name>
+    <Description>Hay guerra puede que eplote to</Description>
+    <Mitigation>hacer un tratado de paz</Mitigation>
+  </Riesgo>
+</ArrayOfRiesgo>
