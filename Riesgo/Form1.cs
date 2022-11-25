@@ -17,6 +17,11 @@ namespace Riesgo
     {
         List <Riesgo> Riesgos = new List<Riesgo>();
         private int n = 0;
+        int nProbabilidad = 0;
+        int nImpacto = 0;
+        int Calculo = 0;
+        string vl;
+
 
         public Form1()
         {
@@ -70,6 +75,10 @@ namespace Riesgo
             miriesgo.Name = txtnombre.Text;
             miriesgo.Description = txtdescripción.Text;
             miriesgo.Mitigation = rtbmitigación.Text;
+            miriesgo.Probabilidad = lstbProbabilidad.Text;
+            miriesgo.Impacto = lstbImpacto.Text;
+            miriesgo.Total = Calculo;
+            miriesgo.Nivel = vl;
             Riesgos.Add(miriesgo);
 
             dtgvRiesgo.DataSource = null;
@@ -189,7 +198,45 @@ namespace Riesgo
                     miRiesgo.Name = txtnombre.Text;
                     miRiesgo.Description = txtdescripción.Text;
                     miRiesgo.Mitigation = rtbmitigación.Text;
+                    miRiesgo.Impacto = lstbImpacto.Text;
+                    miRiesgo.Probabilidad = lstbProbabilidad.Text;
                     break;
+                }
+                nProbabilidad = Convert.ToInt16(lstbProbabilidad.Text);
+                nImpacto = Convert.ToInt16(lstbImpacto.Text);
+                Calculo = nProbabilidad * nImpacto;
+                if (Calculo >= 1 && Calculo <= 5)
+                {
+                    vl = "1-Riesgo muy bajo";
+                    dtgvRiesgo.Rows[n].Cells[7].Style.BackColor = Color.GreenYellow; //BackColor es para el color de fondo de la celda
+                    dtgvRiesgo.Rows[n].Cells[7].Style.ForeColor = Color.White; //ForeColor es para el color de las letras
+                }
+                if (Calculo >= 6 && Calculo <= 10)
+                {
+                    vl = "2-Riesgo bajo";
+                    dtgvRiesgo.Rows[n].Cells[7].Style.BackColor = Color.Green;
+                    dtgvRiesgo.Rows[n].Cells[7].Style.ForeColor = Color.White;
+                }
+                if (Calculo >= 11 && Calculo <= 15)
+                {
+                    vl = "3-Riesgo normal";
+                    dtgvRiesgo.Rows[n].Cells[7].Style.BackColor = Color.Orange;
+                    dtgvRiesgo.Rows[n].Cells[7].Style.ForeColor = Color.White;
+                }
+                if (Calculo >= 16 && Calculo <= 20)
+                {
+                    vl = "4-Riesgo alto";
+                    dtgvRiesgo.Rows[n].Cells[7].Style.BackColor = Color.OrangeRed;
+                    dtgvRiesgo.Rows[n].Cells[7].Style.ForeColor = Color.White;
+
+
+
+                }
+                if (Calculo >= 21 && Calculo <= 25)
+                {
+                    vl = "5-Riesgo muy alto";
+                    dtgvRiesgo.Rows[n].Cells[7].Style.BackColor = Color.Red;
+                    dtgvRiesgo.Rows[n].Cells[7].Style.ForeColor = Color.White;
                 }
             }
             dtgvRiesgo.DataSource = null;
@@ -240,5 +287,6 @@ namespace Riesgo
             TextWriter escritor = new StreamWriter ("Riesgos.xml");
             Serializador.Serialize(escritor, Riesgos);
         }
+
     }
 }

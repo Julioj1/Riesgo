@@ -156,11 +156,11 @@
             this.lstbImpacto.FormattingEnabled = true;
             this.lstbImpacto.ItemHeight = 16;
             this.lstbImpacto.Items.AddRange(new object[] {
-            "1- Muy bajo",
-            "2- Bajo",
-            "3- Medio",
-            "4- Alto",
-            "5- Muy alto"});
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.lstbImpacto.Location = new System.Drawing.Point(32, 152);
             this.lstbImpacto.Name = "lstbImpacto";
             this.lstbImpacto.Size = new System.Drawing.Size(120, 20);
@@ -171,11 +171,11 @@
             this.lstbProbabilidad.FormattingEnabled = true;
             this.lstbProbabilidad.ItemHeight = 16;
             this.lstbProbabilidad.Items.AddRange(new object[] {
-            "1- Muy bajo",
-            "2- Bajo",
-            "3- Medio",
-            "4- Alto",
-            "5- Muy alto"});
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.lstbProbabilidad.Location = new System.Drawing.Point(331, 152);
             this.lstbProbabilidad.Name = "lstbProbabilidad";
             this.lstbProbabilidad.Size = new System.Drawing.Size(120, 20);
