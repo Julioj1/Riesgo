@@ -5,36 +5,19 @@
     <Name>Julio De la Cruz</Name>
     <Description>Se esta filtrando el agua de el techo</Description>
     <Mitigation>Buscar un plomero que arregle el problema</Mitigation>
-    <Impacto>1</Impacto>
-    <Probabilidad>1</Probabilidad>
-    <Total>0</Total>
-  </Riesgo>
-  <Riesgo>
-    <ID>20220781</ID>
-    <Name>Jose Tomas</Name>
-    <Description>Se esta cayendo el techo</Description>
-    <Mitigation>Buscar a alguien que arregle el techo</Mitigation>
-    <Total>0</Total>
+    <Impacto>4</Impacto>
+    <Probabilidad>5</Probabilidad>
+    <Total>20</Total>
+    <Nivel>4-Riesgo alto</Nivel>
   </Riesgo>
   <Riesgo>
     <ID>20221458</ID>
     <Name>Se podria caer el techo</Name>
     <Description>El techo se esta cayendo</Description>
     <Mitigation>pegar el techo</Mitigation>
-    <Total>0</Total>
-  </Riesgo>
-  <Riesgo>
-    <ID>20214569</ID>
-    <Name>a</Name>
-    <Description>Puede venir un tornado y arrasar con todo</Description>
-    <Mitigation>hacer un bunker</Mitigation>
-    <Total>0</Total>
-  </Riesgo>
-  <Riesgo>
-    <ID>20151541</ID>
-    <Name>Guerro</Name>
-    <Description>Hay guerra puede que eplote to</Description>
-    <Mitigation>hacer un tratado de paz</Mitigation>
-    <Total>0</Total>
+    <Impacto>5</Impacto>
+    <Probabilidad>3</Probabilidad>
+    <Total>15</Total>
+    <Nivel>3-Riesgo normal</Nivel>
   </Riesgo>
 </ArrayOfRiesgo>
